@@ -64,7 +64,9 @@ function makeCommand(cmd, options) {
     command.push(cmd.command);
   }
 
-  return command.join(' && ');
+  command = command.map(cmd => `write text "${cmd}"\n`);
+
+  return command.join('');
 }
 
 function makeScript(commands, options) {
@@ -72,7 +74,7 @@ function makeScript(commands, options) {
   keys = [_.head(keys)].concat(_.reverse(_.tail(keys)));
   return keys.map((key, i) => {
     const cmd = commands[key];
-    let script = `write text "${makeCommand(cmd, options)}"`;
+    let script = makeCommand(cmd, options);
     if (i > 0) {
       script = `
               set newSplit to (split horizontally with default profile)
