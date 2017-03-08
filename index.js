@@ -13,6 +13,7 @@ const app = process.argv[2];
 
 if (!app) {
   console.error('usage: autoterm <app>');
+  console.error(' apps:', Object.keys(apps).filter(app => app !== 'actions').join(', '));
   process.exit(3);
 }
 
@@ -47,6 +48,7 @@ if (apps[app]) {
   });
 } else {
   console.error(`No app: ${app}`);
+  console.error('  apps:', Object.keys(apps).filter(app => app !== 'actions').join(', '));
   process.exit(2);
 }
 
