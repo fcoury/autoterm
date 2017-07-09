@@ -1,0 +1,27 @@
+# My Application
+[myapp]
+  path="~/code/myapp"
+
+  [myapp.app]
+  command="./node_modules/.bin/ng serve"
+
+  [myapp.mock-api]
+  path="~/code/tdmc-mock-api"
+  command="nodemon server.js"
+
+  [myapp.terminal]
+  command="code . && clear"
+  
+# My Second Application
+[myapp2]
+  path="~/code/myapp2"
+  
+  [myapp2.pagekite]
+  command="pagekite.py 8081 fcoury.pagekite.me"
+  
+  [myapp2.server]
+  command="PORT=8081 nodemon index.js"
+  
+  [myapp2.terminal]
+  command="code ."
+
