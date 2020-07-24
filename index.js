@@ -66,7 +66,7 @@ function makeCommand(cmd, options) {
     command.push(cmd.command);
   }
 
-  command = command.map(cmd => `write text "${cmd}"\n`);
+  command = command.map(cmd => `write text " ${cmd}"\n`);
 
   return command.join('');
 }
